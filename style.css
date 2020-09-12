@@ -11,7 +11,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(images/bookstore1.jpg);
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bookstore1.jpg);
   font-family: 'Nunito', sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
@@ -103,12 +103,12 @@ button{
   text-align: center;
   font-size: 14px;
   font-weight: 600;
-  color: #0c0101;
+  color: #000;
   cursor: pointer;
 }
 
 .forgot-pass:hover{
-  color: red;
+  color: #8b4513;
 }
 
 .social-media{
