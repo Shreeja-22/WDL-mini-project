@@ -11,7 +11,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bookstore1.jpg);
+  background: url(images/bookstore.jpg);
   font-family: 'Nunito', sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
@@ -169,7 +169,7 @@ button{
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url(images/bookstore.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bookstore1.jpg);
   background-size: cover;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;

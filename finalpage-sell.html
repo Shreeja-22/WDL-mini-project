@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final-Sell</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+
+<style>
+	html {
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Nunito', sans-serif;
+    
+}
+h1{
+    font-size: 50px;
+    font-family: 'Nunito', sans-serif;
+}
+p{
+    font-size: 24px;
+    line-height: 50px;
+}
+.navbar{
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bookstore1.jpg);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+.nav{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 15%;
+}
+.logo {
+    flex: 1 1 auto;
+    margin-left: 10%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 35px;
+    color: (left, #8b4513, #a67b5b);
+}
+
+hr {
+    margin-left: 100px;
+    margin-top:0;
+    margin-right: 200px;
+}
+
+a{
+    margin: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+a:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+}
+
+.display {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn a {
+    color: white; 
+    font-size: 15px; 
+    font-weight: lighter;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+}
+</style>
+
+<body>
+    <div class="navbar">
+        <p class="logo" style="margin-left:30px;margin-top:10px; color: #DAA520;"> Paper Towns</p>
+        <ul class="nav">
+            <li><a href="buy&sell.html">Home</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="sellcart.html">My sell-cart</a></li>
+            <li><a href="index.html">Log Out</a></li>
+        </ul>
+    </div>
+
+    <section class="display">
+        <h1>Thank you for choosing Paper Towns!</h1>
+        <h2>We will notify you as soon as we find a buyer.</h2>
+        <br>
+    </section>
+
+    <section class="btn">
+        <a href="sell.html">Sell more books</a>
+        <a href="buy&sell.html">Return to Homepage</a>
+    </section>
+</body>
