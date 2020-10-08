@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+
 </head>
 
 <style>
@@ -123,6 +124,10 @@ img {
     height: 300px;
 }
 
+img:hover {
+	cursor: zoom-in;
+}
+
 </style>
 
 <body>
@@ -137,7 +142,9 @@ img {
     </div>
 
     <section class="display">
-        <h1 style="margin-bottom: 10px;">Books:</h1><hr>
+        <h1 style="margin-bottom: 10px;">Books:</h1>
+        <hr>
+
     </section>
 
     <section class="grid-area">
@@ -169,34 +176,45 @@ img {
     <br><hr>
     <section class="books">
         <div>
-            <img src="images/3rd year/dbms.jpg">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/3rd year/dbms.jpg">
             <h3>Database Managment Systems</h3>
             <h3 style="margin-left: 50px;">Price: Rs. 200</h3>
             <a href="buycart.html">Add to cart</a>
         </div>
 
         <div>
-            <img src="images/3rd year/mp.jpg">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/3rd year/mp.jpg">
             <h3 style="margin-left: 50px;">Microprocessors</h3>
             <h3 style="margin-left: 55px;">Price: Rs. 240</h3>
             <a style="margin-left: 50px;" href="buycart.html">Add to cart</a>
         </div>
 
         <div>
-            <img src="images/3rd year/aaoa.jpg">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/3rd year/aaoa.jpg">
             <h3 style="margin-left: 30px;">Analysis of Algorithms</h3>
             <h3 style="margin-left: 55px;">Price: Rs. 400</h3>
             <a style="margin-left: 50px;" href="buycart.html">Add to cart</a>
         </div>
 
         <div class="items">
-            <img src="images/3rd year/cn.jpg">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"src="images/3rd year/cn.jpg">
             <h3 style="margin-left: 40px;">Computer Networks</h3>
             <h3 style="margin-left: 55px;">Price: Rs. 240</h3>
             <a style="margin-left: 50px;" href="buycart.html">Add to cart</a>
         </div>
     </section>
 
+<script>
+	function bigImg (x) {
+		x.style.height = "350px";
+		x.style.width = "300px";
+	}
+	function normalImg(x) {
+		x.style.width = "250px";
+		x.style.height = "300px";
+	}
+	
+</script>
     
 </body>
 </html>
