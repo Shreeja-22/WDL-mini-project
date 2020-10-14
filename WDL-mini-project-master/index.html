@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>Login</h2>
+
+      <form onsubmit="return validate_login()" action="buy&sell.html">
+        <label>
+        <span>Email</span>
+        <input type="email" id="Luname" name="Enter Username">
+      </label>
+      <label>
+        <span>Password</span>
+        <input id="Lpass" type="password" name="password">
+      </label>
+      <button class="submit" type="submit">Login</button>
+      <p class="forgot-pass">Forgot Password ?</p>
+      </form>
+
+      <div class="social-media">
+        <ul>
+          <li><img src="../images/facebook.png"></li>
+          <li><img src="../images/twitter.png"></li>
+          <li><img src="../images/linkedin.png"></li>
+          <li><img src="../images/instagram.png"></li>          
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text m-up">
+          <h2>New here?</h2>
+          <p style="font-size:20px;">Sign up and be a part of Paper Towns!</p>
+        </div>
+        <div class="img-text m-in">
+          <h2>One of us?</h2>
+          <p style="font-size:20px;">If you already have an account, just sign in. We've missed you!</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Sign Up</span>
+          <span class="m-in">Login</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Sign Up</h2>
+
+        <form onsubmit ="return validate_registration()" action="buy&sell.html">
+          <label>
+          <span>Name</span>
+          <input id="Rname" type="text">
+        </label>
+        <label>
+          <span>Email</span>
+          <input id="Remail" type="email">
+        </label>
+<!--         <label>
+          <span>Username</span>
+          <input type="text">
+        </label> -->
+        <label>
+          <span>Password</span>
+          <input id="Rpass" type="password">
+        </label>
+        <label>
+          <span>Confirm Password</span>
+          <input id="Rconfirm_pass" type="password">
+        </label>
+        <button type="submit" class="submit">Sign Up Now</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+	document.querySelector('.img-btn').addEventListener('click', function()
+	{
+		document.querySelector('.cont').classList.toggle('s-signup')
+	}
+);
+  function validate_login()
+  {
+    var login_username = document.getElementById("Luname");
+    var login_password = document.getElementById("Lpass");
+
+    var regx = /^([0-9]{4}).([a-z]+).([a-z]+)(@ves)$/;
+    if (regx.test(reg_email))
+    {
+      return true;
+    }
+    else{
+      alert("Enter your VES Email ID");
+      return false;
+    }
+
+    if(login_username.value.trim()=="")
+    {
+      alert("Username field is empty");
+      Luname.style.border = "solid 3px red";
+      return false;
+    }
+    else if(login_password.value.trim()=="")
+    {
+      alert("Password field is empty");
+      Lpass.style.border = "solid 3px red";
+      return false;
+    }
+    else if(login_password.value.trim().length<5)
+    {
+      alert("Password too short");
+      Lpass.style.border = "solid 3px red";
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+
+  }
+
+    function validate_registration()
+  {
+    var reg_name = document.getElementById("Rname");
+    var reg_email = document.getElementById("Remail");
+
+    var reg_confirm_password = document.getElementById("Rconfirm_pass");
+    var reg_password = document.getElementById("Rpass");
+
+    var regx = /^[[0-9]{4}].[[a-z]+].[[a-z]+][@ves.ac.in]$/;
+    if (regx.match(reg_email))
+    {
+      return true;
+    }
+    else {
+      alert("Enter your VES Email ID");
+      return false;
+    }
+
+    if(reg_name.value.trim()=="")
+    {
+      alert("Name field is empty");
+      Luname.style.border = "solid 3px red";
+      return false;
+    }
+    else if(reg_password.value.trim()=="")
+    {
+      alert("Password field is empty");
+      Lpass.style.border = "solid 3px red";
+      return false;
+    }
+    else if(reg_password.value.trim().length<5)
+    {
+      alert("Password too short");
+      Lpass.style.border = "solid 3px red";
+      return false;
+    }
+    else if(reg_email.value.trim()=="")
+    {
+      alert("Email field is empty");
+      Lpass.style.border = "solid 3px red";
+      return false;
+    }
+    else if(reg_confirm_password.value.trim()=="")
+    {
+      alert("Password field is empty");
+      Lpass.style.border = "solid 3px red";
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+</script>
+</body>
+</html>
