@@ -12,7 +12,7 @@
     <div class="form sign-in">
       <h2>Login</h2>
 
-      <form onsubmit="return validate_login()" action="buy&sell.html">
+      <form onsubmit= "return validate_login()" action="buy&sell.html">
         <label>
         <span>Email</span>
         <input type="email" id="Luname" name="Enter Username">
@@ -91,8 +91,8 @@
     var login_username = document.getElementById("Luname");
     var login_password = document.getElementById("Lpass");
 
-    var regx = /^([0-9]{4}).([a-z]+).([a-z]+)(@ves)$/;
-    if (regx.test(reg_email))
+    var regx = /^[[0-9]{4}].[[a-z]]+.[[a-z]+][@ves]$/;
+    if (regx.match(reg_email))
     {
       return true;
     }
@@ -126,14 +126,13 @@
 
   }
 
-    function validate_registration()
+  function validate_registration()
   {
     var reg_name = document.getElementById("Rname");
     var reg_email = document.getElementById("Remail");
-
-    var reg_confirm_password = document.getElementById("Rconfirm_pass");
     var reg_password = document.getElementById("Rpass");
-
+    var reg_confirm_password = document.getElementById("Rconfirm_pass");
+    
     var regx = /^[[0-9]{4}].[[a-z]+].[[a-z]+][@ves.ac.in]$/;
     if (regx.match(reg_email))
     {
