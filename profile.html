@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Final-Sell</title>
+	<title>Profile</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css">
@@ -76,13 +76,18 @@ a:hover{
 
 .display{
     margin-left: 100px;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .profile {
     display: grid;
     grid-template-columns: 300px 300px;
     margin-left: 100px;
+    margin-top:0;
+}
+
+.profile p {
+    margin-top: 10px;
 }
 
 </style>
@@ -93,13 +98,14 @@ a:hover{
         <ul class="nav">
             <li><a href="buy&sell.html">Home</a></li>
             <li><a href="profile.html">My Profile</a></li>
-            <li><a href="sellcart.html">My sell-cart</a></li>
-            <li><a href="index.html">Log Out</a></li>
+            <li><a href="frontpage.html">Log Out</a></li>
         </ul>
     </div>
 
+    <p id="demo" style="margin-top: 70px; margin-bottom: 0px; margin-left: 700px; font-size: 15px; color: black "></p>
+
     <div class="display">
-        <h1 style="margin-bottom: 10px;">My Profile</h1><hr>
+        <h1 style="margin-bottom: 10px; margin-top: 0px;">My Profile</h1><hr>
     </div>
     
     <div class="profile">
@@ -107,10 +113,15 @@ a:hover{
         <p>Shreeja Nanda</p>
         <h2>E-mail ID:</h2>
         <p>2018.shreeja.nanda@ves.ac.in</p>
-        <h2>Username</h2>
+        <h2>Username:</h2>
         <p>shreeja-nanda22</p>
-        <h2>Password</h2>
+        <h2>Password:</h2>
         <p>sn77645</p>
     </div>
+
+    <script>
+        var d = new Date()
+        document.getElementById("demo").innerHTML = d;
+    </script>
 </body>
 </html>

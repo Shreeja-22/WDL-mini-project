@@ -43,7 +43,8 @@ p{
     display: flex;
     justify-content: right;
     list-style: none;
-    margin-right: 15%;
+    margin-right: 50px;
+    margin-bottom: 40px;
 }
 .logo {
     flex: 1 1 auto;
@@ -106,6 +107,35 @@ a:hover{
     background: linear-gradient(left, #8b4513, #a67b5b);;
 }
 
+.form {
+    margin: 35px;
+}
+
+.input-field {
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+button {
+    width: 150px;
+    margin: 20px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+    margin-left: 30%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
 </style>
 
 <body>
@@ -115,19 +145,20 @@ a:hover{
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
+<li><a href="adminlogin.html">Admin Login</a></li>
 </ul>
 </div>
 
 <section class="home-area" id="home">
     <div class="text-part">
         <h1 style="text-align: center; margin-top: 200px; color:white;">Welcome to Paper Towns!</h1>
-        <p class="start" style="text-align: center;"><a href="index.html">Let's get started</a></p>
+        <p class="start" style="text-align: center;"><a href="login.html">Let's get started</a></p>
     </div>
  </section>
 
 <section class="about-area" id="about">
     <div class="text-part">
-        <h1 style="color:white; text-decoration:underline;">
+        <h1 style="color:white; text-decoration:underline; margin-left: 33%;">
 About Us</h1>
 <p style="color:white;">Paper Towns is an online bookstore for students that guarantees you great quality books at affordable prices. Students can buy and sell their books easily through this website. This initiative is brought to you by a group of engineering students, who have more or less, borne the brunt of buying expensive engineering books. We assure you that our books are checked for their quality before being sold. That being said, <b style="font-style: italic; color:white;">Make yourself at home in these Paper Towns.</b>
 </p>
@@ -137,14 +168,23 @@ About Us</h1>
 
 <section class="contact-area" id="contact">
     <div class="text-part">
-        <h1 style="color:white; text-decoration:underline;">
+        <h1 style="color:white; text-decoration:underline; margin-left: 32%;">
 Contact Us</h1>
-<p>
-    Feel free to call us with any queries on: <p>+91-9769585969</p>
-    <p>or send in an e-mail to: </p><p>paper.towns@gmail.com</p>
-</p>
+<div style="position: center; margin-left: 22%;">
+    <form action="contact-form.php" method="post">
+        <input class="input-field" type="text" name="name" placeholder="Full Name" required><br>
+        <input class="input-field" type="e-mail" name="mail" placeholder="Your e-mail ID" required><br>
+        <input class="input-field" type="text" name="subject" placeholder="Subject" required><br>
+        <textarea class="input-field" name="message" placeholder="Message" required></textarea><br><br>
+        <button onclick="showAlert()" type="submit" name="submit" style="margin-left: 20%;">Submit</button>
+    </form>
+    </div>
 </div>
 </section>
-
 </body>
+<script>
+    function showAlert(){
+        alert("Your query has been submitted!")
+    }
+</script>
 </html>

@@ -157,13 +157,16 @@ hr {
             <li><a href="buy&sell.html">Home</a></li>
             <li><a href="profile.html">My Profile</a></li>
             <li><a href="sellcart.html">My sell-cart</a></li>
-            <li><a href="index.html">Log Out</a></li>
+            <li><a href="frontpage.html">Log Out</a></li>
         </ul>
     </div>
+
 
     <section class="choices">
         <h1 style="margin-bottom: 10px; ">Choose your branch, year and books:</h1><hr>
     </section><br>
+
+    
 
 <div class="display-area">
     <div class="year">
@@ -192,7 +195,7 @@ hr {
     <div class="books">
         <h2>Select books to be sold:</h2>
         <form>
-            <select id="b-select" multiple>
+            <select id="b-select" multiple required>
                 <option>Analysis of Algorithms</option>
                 <option>Microprocessors</option>
                 <option>Computer Networks</option>
@@ -211,7 +214,8 @@ hr {
  <script type="text/javascript">
                 $(document).ready(function() {
                 $('#b-select').chosen();
-             }); </script>
+             });
+ </script>
 
 
 </html>

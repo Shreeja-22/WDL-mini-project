@@ -73,6 +73,21 @@ a:hover{
     background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
 }
 
+button{
+    margin: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+button:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+}
+
+
 .home-area {
     position: relative;
     display: flex;
@@ -81,7 +96,7 @@ a:hover{
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    height: 800px;
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bookstore1.jpg);
     background-size: cover;
 }
@@ -100,15 +115,14 @@ a:hover{
     	<ul class="nav">
 			<li><a href="buy&sell.html">Home</a></li>
 			<li><a href="profile.html">My Profile</a></li>
-			<li><a href="index.html">Log Out</a></li>
+			<li><a href="frontpage.html">Log Out</a></li>
 		</ul>
 	</div>
 
 
 	<section class="home-area" id="home">
-        <p id="demo" style="margin-top: 120px; margin-bottom: 0px; margin-left: center; font-size: 20px; color: #DAA520; "></p>
     <div class="text-part">
-        <h1 style="text-align: center; margin-top: 100px; color:white;">Welcome, Shreeja</h1>
+        <h1 style="text-align: center; margin-top: 200px; color:white;">Welcome, Shreeja</h1>
         <p style="text-align: center; color: #fff;">What would you like to do today?</p>
         	<ul class="nav" style="margin-left: 32%; margin-top: 20px;">
 				<li><a href="buy.html" style="font-size: 20px;">Buy Books</a></li>
@@ -118,8 +132,8 @@ a:hover{
  </section>
 
 <script>
-    var d = new Date()
-    document.getElementById("demo").innerHTML = d;
+    
+
 </script>
 </body>
 </html>
