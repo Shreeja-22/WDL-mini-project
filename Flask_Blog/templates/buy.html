@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Window</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+
+</head>
+
+<style>
+
+    html {
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Nunito', sans-serif;
+    
+}
+h1{
+    font-size: 50px;
+    font-family: 'Nunito', sans-serif;
+}
+p{
+    font-size: 24px;
+    line-height: 50px;
+}
+.navbar{
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bookstore1.jpg);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+.nav{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 15%;
+}
+.logo {
+    flex: 1 1 auto;
+    margin-left: 10%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 35px;
+    color: (left, #8b4513, #a67b5b);
+}
+
+a{
+    margin: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+a:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+}
+
+hr {
+    margin-left: 100px;
+    margin-top:0;
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    text-align: left;
+    margin-top: -10px;
+    margin-left: 100px;
+}
+
+.display h1{
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+ .grid-area {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 0px;
+    margin-left: 0px;
+}
+
+.books {
+    margin-top: 50px;
+    margin-left: 100px;
+    display: grid;
+    grid-column-gap: 25px;
+    grid-template-columns: 300px 300px 300px;
+}
+
+.books a{
+    color: white; 
+    font-size: 15px; 
+    font-weight: lighter;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+
+.items {
+    margin-top: 50px;
+}
+
+img {
+    width:250px;
+    height: 300px;
+}
+
+img:hover {
+	cursor: zoom-in;
+}
+
+</style>
+
+<body>
+    <div class="navbar">
+        <p class="logo" style="margin-left:30px; margin-top:10px; color: #DAA520;">Paper Towns</p>
+        <ul class="nav">
+            <li><a href="/buysell">Home</a></li>
+            <li><a href="/profile">My Profile</a></li>
+            <li><a href="/buycart">My Cart</a></li>
+            <li><a href="/frontpage">Log Out</a></li>
+        </ul>
+    </div>
+
+    <section class="display">
+        <h1 style="margin-bottom: 10px;">Books:</h1>
+        <hr>
+
+    </section>
+
+    <section class="grid-area">
+    <div class="filter">
+        <h2>Year:</h2>
+        <input type="checkbox" id="FE" name="FE" value="FE">
+        <label for="FE">FE</label>
+        <input type="checkbox" id="SE" name="SE" value="SE">
+        <label for="SE">SE</label>
+        <input type="checkbox" id="TE" name="TE" value="TE">
+        <label for="TE">TE</label>
+        <input type="checkbox" id="BE" name="BE" value="BE">
+        <label for="BE">BE</label>
+    </div>
+    <div class="filter">
+        <h2>Branch:</h2>
+        <input type="checkbox" id="cmpn" name="cmpn" value="cmpn">
+        <label for="cmpn">CMPN</label>
+        <input type="checkbox" id="it" name="it" value="it">
+        <label for="it">IT</label>
+        <input type="checkbox" id="extc" name="extc" value="extc">
+        <label for="extc">EXTC</label>
+        <input type="checkbox" id="etrx" name="etrx" value="etrx">
+        <label for="etrx">ETRX</label>
+        <input type="checkbox" id="instru" name="instru" value="instru">
+        <label for="instru">INSTRU</label>       
+    </div>
+    </section>
+    <br><hr>
+    <section class="books">
+        <div>
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/3rd year/dbms.jpg" id="fade1">
+            <h3>Database Managment Systems</h3>
+            <h3 style="margin-left: 50px;">Price: Rs. 200</h3>
+            <a href="/buycart">Add to cart</a>
+        </div>
+
+        <div>
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/3rd year/mp.jpg" id="fade2" >
+            <h3 style="margin-left: 50px;">Microprocessors</h3>
+            <h3 style="margin-left: 55px;">Price: Rs. 240</h3>
+            <a style="margin-left: 50px;" href="/buycart">Add to cart</a>
+        </div>
+
+        <div>
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/3rd year/aaoa.jpg" id="fade3">
+            <h3 style="margin-left: 30px;">Analysis of Algorithms</h3>
+            <h3 style="margin-left: 55px;">Price: Rs. 400</h3>
+            <a style="margin-left: 50px;" href="/buycart">Add to cart</a>
+        </div>
+
+        <div class="items">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"src="images/3rd year/cn.jpg" id="fade4">
+            <h3 style="margin-left: 40px;">Computer Networks</h3>
+            <h3 style="margin-left: 55px;">Price: Rs. 240</h3>
+            <a style="margin-left: 50px;" href="/buycart">Add to cart</a>
+        </div>
+    </section>
+
+<script type="text/javascript">
+	function bigImg (x) {
+		x.style.height = "350px";
+		x.style.width = "300px";
+	}
+	function normalImg(x) {
+		x.style.width = "250px";
+		x.style.height = "300px";
+	}
+	
+	$(document).ready(function() {
+			$("#fade1").hide(10);
+			$("#fade1").fadeIn(1500);
+			$("#fade2").hide(10);
+			$("#fade2").fadeIn(1500);
+			$("#fade3").hide(10);
+			$("#fade3").fadeIn(1500);
+			$("#fade4").hide(10);
+			$("#fade4").fadeIn(1500);
+	});
+</script>
+    
+</body>
+</html>
