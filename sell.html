@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Select Branch</title>
+	<title>Sell your Books</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chosen.min.css">
     <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="chosen.proto.js"></script>
+    <script type="text/javascript" src="chosen.proto.min.js"></script>
 </head>
 
 <style>
@@ -138,7 +142,7 @@ label {
     </section><br>
 
     <div style="position: center; margin-left: 25%;" >
-        <form action="contact-form.php" method="post"> 
+        <form action="" method="post"> 
             <label style="margin-left: 90px;"for="year">Select Year:</label><br>
             <select class="input-field" required>
                 <option value="FE">FE</option>
@@ -168,6 +172,10 @@ label {
             </select>
             <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Book Title:</p>
             <input id="title" class="input-field" type="text" placeholder="Enter book name" required><br>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Author:</p>
+            <input id="author" class="input-field" type="text" placeholder="Enter Author's name" required><br>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Price (max: ₹500):</p>
+            <input id="title" class="input-field" type="text" placeholder="Enter price" required><br>
             <p style="margin-bottom: 0px; font-weight: bold; margin-top: 5px; margin-left: 90px;">Upload Book Image:</p>
             <input style="align-content: center;" class="input-field" type="file" name="fileToUpload" id="fileToUpload"><br><br>
             <button type="submit" name="submit"><a href="sellcart.html">Upload Data</a></button>
