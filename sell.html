@@ -49,6 +49,7 @@ p{
     justify-content: right;
     list-style: none;
     margin-right: 15%;
+    margin-bottom: 40px;
 }
 .logo {
     flex: 1 1 auto;
@@ -80,74 +81,48 @@ a:hover{
     margin-top: 100px;  
 }
 
-.year h2{
-    text-align: left;
-    margin-left: 100px;
-}
-
-.year select {
-    text-align: left;
-    margin-left: 100px;
-    width:100px;
-    height:30px;
-    font-size: 15px;
-    border: 2px solid #DAA520;
-}
-
-.branch h2 {
-    text-align: left;
-}
-
-.branch select {
-    text-align: left;
-    margin-left: 0px;
-    width:200px;
-    height:30px;
-    font-size: 15px;
-    border: 2px solid #DAA520;
-}
-
-.books h2 {
-    text-align: left;
-    margin-left: 50px;
-}
-
-.books form, select {
-    text-align: left;
-    margin-left: 50px;
-    width: 400px;
-    font-size: 15px;
-    border: 2px solid #DAA520;
-}
-
-.display-area {
-    display: grid;
-    grid-column-gap: 100px;
-    grid-template-columns: 300px 200px 400px
-}
-
-.btn {
-    text-align: center;
-    margin-top: 50px;
-    color: black;
-}
-
-.btn a {
-    color: white; 
-    font-size: 15px; 
-    font-weight: lighter;
-    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
-    border: none;
-    padding: 10px;
-    border-radius: 30px;
-}
-
-
 hr {
     margin-left: 100px;
     top:0;
     margin-right: 200px;
 }
+
+.form {
+    margin: 35px;
+}
+
+.input-field {
+    width: 400px;
+    height: 40px;
+    margin-left: 10%;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+button {
+    width: 200px;
+    margin: 20px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+    margin-left: 20%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
 </style>
 
 <body>
@@ -156,66 +131,53 @@ hr {
         <ul class="nav">
             <li><a href="buy&sell.html">Home</a></li>
             <li><a href="profile.html">My Profile</a></li>
-            <li><a href="sellcart.html">My sell-cart</a></li>
+            <li><a href="sellcart.html">Order Summary</a></li>
             <li><a href="frontpage.html">Log Out</a></li>
         </ul>
     </div>
 
 
     <section class="choices">
-        <h1 style="margin-bottom: 10px; ">Choose your branch, year and books:</h1><hr>
+        <h1 style="margin-bottom: 10px; ">Choose your branch, year and book:</h1><hr>
     </section><br>
 
-    
-
-<div class="display-area">
-    <div class="year">
-        <h2>Select year:</h2>
-        <select>
-          <option value="class">Select</option>
-          <option value="year">FE</option>
-          <option value="year">SE</option>
-          <option value="year">TE</option>
-          <option value="year">BE</option>
-      </select>
-    </div>
-
-    <div class="branch">
-        <h2>Branch:</h2>
-        <select>
-          <option value="class">Select</option>
-          <option value="branch">Computers</option>
-          <option value="branch">Information Technology</option>
-          <option value="branch">Electronics and Telecommunication</option>
-          <option value="branch">Electronics</option>
-          <option value="branch">Instrumentation</option>
-      </select>
-    </div>
-
-    <div class="books">
-        <h2>Select books to be sold:</h2>
-        <form>
-            <select id="b-select" multiple required>
-                <option>Analysis of Algorithms</option>
-                <option>Microprocessors</option>
-                <option>Computer Networks</option>
-                <option>Database Management Systems</option>
+    <div style="position: center; margin-left: 25%;" >
+        <form action="contact-form.php" method="post"> 
+            <label style="margin-left: 90px;"for="year">Select Year:</label><br>
+            <select class="input-field" required>
+                <option value="FE">FE</option>
+                <option value="SE">SE</option>
+                <option value="TE">TE</option>
+                <option value="BE">BE</option>
+            </select><br><br>
+            <label style="margin-left: 90px;" for="branch">Select Branch:</label><br>
+            <select class="input-field" required>
+                <option value="COMMON">COMMON (FIRST YEARS ONLY)</option>
+                <option value="CMPN">CMPN</option>
+                <option value="EXTC">EXTC</option>
+                <option value="ETRX">ETRX</option>
+                <option value="IT">IT</option>
+                <option value="INSTRU">INSTRUMENTATION</option>
+            </select><br><br>
+            <label label style="margin-left: 90px;" for="sem">Select Semester:</label><br>
+            <select class="input-field" required>
+                <option value="sem1">SEM 1</option>
+                <option value="sem2">SEM 2</option>
+                <option value="sem3">SEM 3</option>
+                <option value="sem4">SEM 4</option>
+                <option value="sem5">SEM 5</option>
+                <option value="sem6">SEM 6</option>
+                <option value="sem7">SEM 7</option>
+                <option value="sem8">SEM 8</option>
             </select>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Book Title:</p>
+            <input id="title" class="input-field" type="text" placeholder="Enter book name" required><br>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top: 5px; margin-left: 90px;">Upload Book Image:</p>
+            <input style="align-content: center;" class="input-field" type="file" name="fileToUpload" id="fileToUpload"><br><br>
+            <button type="submit" name="submit"><a href="sellcart.html">Upload Data</a></button>
+            <br><br><br><br><br><br>
         </form>
-    </div>
-</div>
-<br>
-<div>
-    <h2 class="btn" style="text-align: center;"><a href="sellcart.html">Submit</a></h2>
-    <h2 class="btn" style="text-align: center;"><a href="sell.html">Add more books</a></h2>
-</div>
-</body>
-
- <script type="text/javascript">
-                $(document).ready(function() {
-                $('#b-select').chosen();
-             });
- </script>
-
+        </div>
+    </body>
 
 </html>
