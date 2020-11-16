@@ -2,7 +2,7 @@
 
 //index.php
 
-include('database_connection.php');
+include('config.php');
 
 ?>
 
@@ -17,46 +17,140 @@ include('database_connection.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Product filter in php</title>
+    <title>Shopping Window</title>
 
-    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href = "css/jquery-ui.css" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<style>
+
+    html {
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Nunito', sans-serif;
+    
+}
+h1{
+    font-size: 50px;
+    font-family: 'Nunito', sans-serif;
+}
+p{
+    font-size: 17px;
+    line-height: 20px;
+    color: black;
+}
+.navbar{
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/bookstore1.jpg);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+.nav{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 15%;
+}
+.logo {
+    flex: 1 1 auto;
+    margin-left: 10%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 35px;
+    color: (left, #8b4513, #a67b5b);
+}
+
+a{
+    margin: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+a:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+}
+
+hr {
+    margin-left: 180px;
+    margin-top:0;
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
+
+.display h1{
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 180px;
+    color: black;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 0px;
+    font-weight: 700 bold;
+}
+
+</style>
+ 
+
 <body>
     <!-- Page Content -->
+    <div class="navbar">
+        <p class="logo" style="margin-left:30px; margin-top:10px; color: #DAA520;">Paper Towns</p>
+        <ul class="nav">
+            <li><a href="buy&sell.html">Home</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="buycart.html">My Cart</a></li>
+            <li><a href="frontpage.html">Log Out</a></li>
+        </ul>
+    </div>
+
+    <section class="display">
+        <h1 style="margin-bottom: 10px;"><b>Books:</b></h1>
+        <hr>
+    </section>
+
     <div class="container">
         <div class="row">
-        	<br />
-        	<h2 align="center">Advance Ajax Product Filters in PHP</h2>
-        	<br />
             <div class="col-md-3">                				
 				<div class="list-group">
-					<h3>Price</h3>
-					<input type="hidden" id="hidden_minimum_price" value="0" />
-                    <input type="hidden" id="hidden_maximum_price" value="65000" />
-                    <p id="price_show">1000 - 65000</p>
-                    <div id="price_range"></div>
-                </div>				
-                <div class="list-group">
-					<h3>Brand</h3>
-                    <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+					<h3><strong>Semester:</strong></h3>
+                    <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
 					<?php
 
-                    $query = "SELECT DISTINCT(product_brand) FROM product WHERE product_status = '1' ORDER BY product_id DESC";
-                    $statement = $connect->prepare($query);
+                    $query = "SELECT DISTINCT(SEMESTER) FROM book WHERE product_status='1' ORDER BY ISBN ASC";
+                    $statement = $mysqli->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
                     foreach($result as $row)
                     {
                     ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?></label>
+                        <label><input type="checkbox" class="common_selector SEM" value="<?php echo $row['SEMESTER']; ?>" > SEM <?php echo $row['SEMESTER']; ?></label>
                     </div>
                     <?php
                     }
@@ -66,65 +160,67 @@ include('database_connection.php');
                 </div>
 
 				<div class="list-group">
-					<h3>RAM</h3>
+					<h3><strong>Branch:</strong></h3>
                     <?php
 
                     $query = "
-                    SELECT DISTINCT(product_ram) FROM product WHERE product_status = '1' ORDER BY product_ram DESC
+                    SELECT DISTINCT(BRANCH) FROM book WHERE product_status='1' ORDER BY ISBN ASC
                     ";
-                    $statement = $connect->prepare($query);
+                    $statement = $mysqli->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
                     foreach($result as $row)
                     {
                     ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector ram" value="<?php echo $row['product_ram']; ?>" > <?php echo $row['product_ram']; ?> GB</label>
+                        <label><input type="checkbox" class="common_selector BRANCH" value="<?php echo $row['BRANCH']; ?>" > <?php echo $row['BRANCH']; ?></label>
                     </div>
                     <?php    
                     }
 
                     ?>
                 </div>
-				
-				<div class="list-group">
-					<h3>Internal Storage</h3>
-					<?php
+                <div class="list-group">
+                    <h3><strong>Authors:</strong></h3>
+                    <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
+                    <?php
+
                     $query = "
-                    SELECT DISTINCT(product_storage) FROM product WHERE product_status = '1' ORDER BY product_storage DESC
+                    SELECT DISTINCT AUTHOR_NAME FROM book WHERE product_status='1' ORDER BY ISBN ASC
                     ";
-                    $statement = $connect->prepare($query);
+                    $statement = $mysqli->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
                     foreach($result as $row)
                     {
                     ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector storage" value="<?php echo $row['product_storage']; ?>"  > <?php echo $row['product_storage']; ?> GB</label>
+                        <label><input type="checkbox" class="common_selector AUTHOR" value="<?php echo $row['AUTHOR_NAME']; ?>" > <?php echo $row['AUTHOR_NAME']; ?></label>
                     </div>
-                    <?php
+                    <?php    
                     }
-                    ?>	
+
+                    ?>
                 </div>
             </div>
-
-            <div class="col-md-9">
-            	<br />
-                <div class="row filter_data">
-
-                </div>
+        
+    </div>
+<div class="col-md-9">
+            <br />
+            <div class="row filter_data">
+                
             </div>
         </div>
-
     </div>
-<style>
+
+<!-- <style>
 #loading
 {
 	text-align:center; 
 	background: url('loader.gif') no-repeat center; 
 	height: 150px;
 }
-</style>
+</style> -->
 
 <script>
 $(document).ready(function(){
@@ -135,15 +231,13 @@ $(document).ready(function(){
     {
         $('.filter_data').html('<div id="loading" style="" ></div>');
         var action = 'fetch_data';
-        var minimum_price = $('#hidden_minimum_price').val();
-        var maximum_price = $('#hidden_maximum_price').val();
-        var brand = get_filter('brand');
-        var ram = get_filter('ram');
-        var storage = get_filter('storage');
+        var SEM = get_filter('SEM');
+        var BRANCH = get_filter('BRANCH');
+        var AUTHOR= get_filter('AUTHOR');
         $.ajax({
             url:"fetch_data.php",
             method:"POST",
-            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, brand:brand, ram:ram, storage:storage},
+            data:{action:action,SEM:SEM, BRANCH:BRANCH,AUTHOR:AUTHOR},
             success:function(data){
                 $('.filter_data').html(data);
             }
@@ -161,21 +255,6 @@ $(document).ready(function(){
 
     $('.common_selector').click(function(){
         filter_data();
-    });
-
-    $('#price_range').slider({
-        range:true,
-        min:1000,
-        max:65000,
-        values:[1000, 65000],
-        step:500,
-        stop:function(event, ui)
-        {
-            $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
-            $('#hidden_minimum_price').val(ui.values[0]);
-            $('#hidden_maximum_price').val(ui.values[1]);
-            filter_data();
-        }
     });
 
 });
