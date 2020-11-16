@@ -143,33 +143,13 @@ label {
 
     <div style="position: center; margin-left: 25%;" >
         <form action="" method="post"> 
-            <label style="margin-left: 90px;"for="year">Select Year:</label><br>
-            <select class="input-field" required>
-                <option value="FE">FE</option>
-                <option value="SE">SE</option>
-                <option value="TE">TE</option>
-                <option value="BE">BE</option>
-            </select><br><br>
-            <label style="margin-left: 90px;" for="branch">Select Branch:</label><br>
-            <select class="input-field" required>
-                <option value="COMMON">COMMON (FIRST YEARS ONLY)</option>
-                <option value="CMPN">CMPN</option>
-                <option value="EXTC">EXTC</option>
-                <option value="ETRX">ETRX</option>
-                <option value="IT">IT</option>
-                <option value="INSTRU">INSTRUMENTATION</option>
-            </select><br><br>
-            <label label style="margin-left: 90px;" for="sem">Select Semester:</label><br>
-            <select class="input-field" required>
-                <option value="sem1">SEM 1</option>
-                <option value="sem2">SEM 2</option>
-                <option value="sem3">SEM 3</option>
-                <option value="sem4">SEM 4</option>
-                <option value="sem5">SEM 5</option>
-                <option value="sem6">SEM 6</option>
-                <option value="sem7">SEM 7</option>
-                <option value="sem8">SEM 8</option>
-            </select>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Enter Year:</p>
+            <input id="year" class="input-field" type="text" placeholder="Eg: FE,SE,TE,BE" required><br>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Enter Branch:</p>
+            <p style="margin-bottom: 0px; font-size: 15px; font-weight: bold; margin-top:5px; margin-left: 90px;">NOTE: FOR FE BOOKS, BRANCH NAME IS "COMMON"</p>
+            <input id="branch" class="input-field" type="text" placeholder="Eg: COMMON,CMPN,EXTC,ETRX,IT,INSTRU" required><br>
+            <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Enter Semester:</p>
+            <input id="sem" class="input-field" type="text" placeholder="Eg: Sem 1, Sem 3 etc." required><br>
             <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Book Title:</p>
             <input id="title" class="input-field" type="text" placeholder="Enter book name" required><br>
             <p style="margin-bottom: 0px; font-weight: bold; margin-top:5px; margin-left: 90px;">Author:</p>
@@ -179,7 +159,8 @@ label {
             <p style="margin-bottom: 0px; font-weight: bold; margin-top: 5px; margin-left: 90px;">Upload Book Image:</p>
             <input style="align-content: center;" class="input-field" type="file" name="fileToUpload" id="fileToUpload"><br><br>
             <button type="submit" name="submit"><a href="sellcart.html">Upload Data</a></button>
-            <br><br><br><br><br><br>
+            <br><br><br><br>
+            
         </form>
         </div>
     </body>
