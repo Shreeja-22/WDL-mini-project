@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
             // Close statement
-            $stmt->close();
+            // $stmt->close();
         }
     }
     // Check input errors before inserting in database
@@ -157,7 +157,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
 
 </head>
-
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
 <style>
 
 html {
@@ -297,8 +313,10 @@ button {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <input class="input-field" type="text" name="name" placeholder="Full Name"><span class="error">* <?php echo $nameErr;?></span><br><br>
         <input class="input-field" type="e-mail" name="email" placeholder="Your e-mail ID"><span class="error">* <?php echo $emailErr;?></span><br><br>
-        <input class="input-field" type="text" name="subject" placeholder="Subject"><span class="error">* <?php echo $subjectErr;?></span><br><br>
-        <textarea class="input-field" name="comment" placeholder="Enter your query"></textarea><span class="error">* <?php echo $commentErr;?></span><br><br>
+        <input class="input-field" type="text" onkeyup="showHint(this.value)"name="subject" placeholder="Subject"><span class="error">* <?php echo $subjectErr;?></span><br><br>
+        <p>Suggestions: <span id="txtHint"></span></p>
+        <textarea class="input-field"  name="comment" placeholder="Enter your query"></textarea><span class="error">* <?php echo $commentErr;?></span><br><br>
+        
         <form method="post">
         <button type="submit" action="response.php" name="submit">Submit</button>
     </form>
