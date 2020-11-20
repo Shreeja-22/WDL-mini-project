@@ -1,32 +1,11 @@
-<?php 
-
-//index.php
-
-include('config.php');
-
-?>
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homepage</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Shopping Window</title>
-
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href = "css/jquery-ui.css" rel = "stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
 </head>
 
 <style>
@@ -45,19 +24,17 @@ h1{
     font-family: 'Nunito', sans-serif;
 }
 p{
-    font-size: 17px;
-    line-height: 20px;
-    color: black;
+    font-size: 24px;
+    line-height: 50px;
 }
 .navbar{
-    top: 0;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/bookstore1.jpg);
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
     width: 100%;
     height: 70px;
     z-index: 1;
@@ -66,7 +43,8 @@ p{
     display: flex;
     justify-content: right;
     list-style: none;
-    margin-right: 15%;
+    margin-right: 50px;
+    margin-bottom: 40px;
 }
 .logo {
     flex: 1 1 auto;
@@ -92,174 +70,121 @@ a:hover{
     background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
 }
 
-hr {
-    margin-left: 180px;
-    margin-top:0;
-    margin-right: 200px;
-    margin-bottom: 20px;
+.home-area, .about-area, .contact-area{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 800px;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/bookstore.jpg);
+    background-size: cover;
+}
+.text-part{
+    width: 65%;
+    height: 80%;
+}        
+.about-area{
+    background-color: #fefefe;
 }
 
-.display h1{
-    text-align: left;
-    margin-top: 100px;
-    margin-left: 180px;
-    color: black;
+.contact-area{
+    background-color: #262626;
+    color: #fff;
 }
 
-h3 {
+.start a{
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.start a:hover {
+    border: none;
+    padding: 20px;
+    background: linear-gradient(left, #8b4513, #a67b5b);;
+}
+
+.form {
+    margin: 35px;
+}
+
+.input-field {
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
     font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-    color: black;
-    margin-bottom: 0px;
-    font-weight: 700 bold;
+}
+
+button {
+    width: 150px;
+    margin: 20px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(left, #8b4513, #a67b5b);
+    margin-left: 30%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
 }
 
 </style>
- 
 
 <body>
-    <!-- Page Content -->
     <div class="navbar">
-        <p class="logo" style="margin-left:30px; margin-top:10px; color: #DAA520;">Paper Towns</p>
-        <ul class="nav">
-            <li><a href="buy&sell.html">Home</a></li>
-            <li><a href="profile.html">My Profile</a></li>
-            <li><a href="buycart.html">My Cart</a></li>
-            <li><a href="frontpage.html">Log Out</a></li>
-        </ul>
+    <p class="logo" style="margin-left:30px;margin-top:10px; color: #DAA520;"> Paper Towns</p>
+    <ul class="nav">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="adminlogin.html">Admin Login</a></li>
+</ul>
+</div>
+
+<section class="home-area" id="home">
+    <div class="text-part">
+        <h1 style="text-align: center; margin-top: 200px; color:white;">Welcome to Paper Towns!</h1>
+        <p class="start" style="text-align: center;"><a href="login.php">Let's get started</a></p>
     </div>
+ </section>
 
-    <section class="display">
-        <h1 style="margin-bottom: 10px;"><b>Books:</b></h1>
-        <hr>
-    </section>
+<section class="about-area" id="about">
+    <div class="text-part">
+        <h1 style="color:white; text-decoration:underline; margin-left: 33%;">
+About Us</h1>
+<p style="color:white;">Paper Towns is an online bookstore for students that guarantees you great quality books at affordable prices. Students can buy and sell their books easily through this website. This initiative is brought to you by a group of engineering students, who have more or less, borne the brunt of buying expensive engineering books. We assure you that our books are checked for their quality before being sold. That being said, <b style="font-style: italic; color:white;">Make yourself at home in these Paper Towns.</b>
+</p>
+</div>
+</section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">                				
-				<div class="list-group">
-					<h3><strong>Semester:</strong></h3>
-                    <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
-					<?php
 
-                    $query = "SELECT DISTINCT(SEMESTER) FROM book WHERE product_status='1' ORDER BY ISBN ASC";
-                    $statement = $mysqli->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    foreach($result as $row)
-                    {
-                    ?>
-                    <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector SEM" value="<?php echo $row['SEMESTER']; ?>" > SEM <?php echo $row['SEMESTER']; ?></label>
-                    </div>
-                    <?php
-                    }
-
-                    ?>
-                    </div>
-                </div>
-
-				<div class="list-group">
-					<h3><strong>Branch:</strong></h3>
-                    <?php
-
-                    $query = "
-                    SELECT DISTINCT(BRANCH) FROM book WHERE product_status='1' ORDER BY ISBN ASC
-                    ";
-                    $statement = $mysqli->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    foreach($result as $row)
-                    {
-                    ?>
-                    <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector BRANCH" value="<?php echo $row['BRANCH']; ?>" > <?php echo $row['BRANCH']; ?></label>
-                    </div>
-                    <?php    
-                    }
-
-                    ?>
-                </div>
-                <div class="list-group">
-                    <h3><strong>Authors:</strong></h3>
-                    <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
-                    <?php
-
-                    $query = "
-                    SELECT DISTINCT AUTHOR_NAME FROM book WHERE product_status='1' ORDER BY ISBN ASC
-                    ";
-                    $statement = $mysqli->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    foreach($result as $row)
-                    {
-                    ?>
-                    <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector AUTHOR" value="<?php echo $row['AUTHOR_NAME']; ?>" > <?php echo $row['AUTHOR_NAME']; ?></label>
-                    </div>
-                    <?php    
-                    }
-
-                    ?>
-                </div>
-            </div>
-        
+<section class="contact-area" id="contact">
+    <div class="text-part">
+        <h1 style="color:white; text-decoration:underline; margin-left: 32%;">
+Contact Us</h1>
+<div style="position: center; margin-left: 22%;">
+    <form action="contact-form.php" method="post">
+        <input class="input-field" type="text" name="name" placeholder="Full Name" required><br>
+        <input class="input-field" type="e-mail" name="mail" placeholder="Your e-mail ID" required><br>
+        <input class="input-field" type="text" name="subject" placeholder="Subject" required><br>
+        <textarea class="input-field" name="message" placeholder="Message" required></textarea><br><br>
+        <button onclick="showAlert()" type="submit" name="submit" style="margin-left: 20%;">Submit</button>
+    </form>
     </div>
-<div class="col-md-9">
-            <br />
-            <div class="row filter_data">
-                
-            </div>
-        </div>
-    </div>
-
-<!-- <style>
-#loading
-{
-	text-align:center; 
-	background: url('loader.gif') no-repeat center; 
-	height: 150px;
-}
-</style> -->
-
-<script>
-$(document).ready(function(){
-
-    filter_data();
-
-    function filter_data()
-    {
-        $('.filter_data').html('<div id="loading" style="" ></div>');
-        var action = 'fetch_data';
-        var SEM = get_filter('SEM');
-        var BRANCH = get_filter('BRANCH');
-        var AUTHOR= get_filter('AUTHOR');
-        $.ajax({
-            url:"fetch_data.php",
-            method:"POST",
-            data:{action:action,SEM:SEM, BRANCH:BRANCH,AUTHOR:AUTHOR},
-            success:function(data){
-                $('.filter_data').html(data);
-            }
-        });
-    }
-
-    function get_filter(class_name)
-    {
-        var filter = [];
-        $('.'+class_name+':checked').each(function(){
-            filter.push($(this).val());
-        });
-        return filter;
-    }
-
-    $('.common_selector').click(function(){
-        filter_data();
-    });
-
-});
-</script>
-
+</div>
+</section>
 </body>
-
+<script>
+    function showAlert(){
+        alert("Your query has been submitted!")
+    }
+</script>
 </html>
